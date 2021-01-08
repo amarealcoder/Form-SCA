@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <img src="form-image2.jpg" alt="a highrise bulding">
+
+    <form>
+        <h2>Let's work together</h2>
+        <p id="desc">We'd love to hear from you! Send us a message using the form or e-mail us. Your feedback will help us serve you better because your satisfaction is our joy.</p>
+        <ul>
+            <div class="aligned">
+                <li>
+                    <label for="name" class="aligned-label">First name</label>
+                    <input type="text" class="aligned-input" id="fname" name="user_firstname">
+                </li>
+                <li>
+                    <label for="name" class="aligned-label">Last name</label>
+                    <input type="text" class="aligned-input" id="lname" name="user_lastname">
+                </li>
+            </div>
+            <li>
+                <label for="mail">E-mail</label>
+                <input type="email" id="mail" name="user_email">
+            </li>
+            <li>
+                <label for="workplace">Company</label>
+                <input type="text" id="workplace" name="user_workplace">
+            </li>
+            <li>
+                <label for="phone">Phone <small>Optional</small></label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+            </li>
+            <li>
+                <label for="msg" id="ask">How can we help you? <small>Max. 500 characters</small></label>
+                <textarea id="msg" name="user_message" maxlength="500"></textarea>
+            </li>
+        </ul>
+        <div>
+            <p>Expected Budget</p>
+            <input type="radio" name="budget" value="less_than_$25k" id="choice1"><label for="choice1">Less than
+                $25k</label>
+            <br>
+            <input type="radio" name="budget" value="$25k-$50k" id="choice2"><label for="choice2">$25k-$50k</label>
+            <br>
+            <input type="radio" name="budget" value="$50k-$100k" id="choice3"><label for="choice3">$50k-$100k</label>
+            <br>
+            <input type="radio" name="budget" value="$100k+" id="choice4"><label for="choice3">$100k+</label>
+        </div>
+        <div id="fdback">
+            <label for="feedback">How did you hear about us?</label>
+            <input type="text" id="feedback" name="user_feedback">
+        </div>
+        <div id="button">
+            <input type="submit" value="submit">
+        </div>
+    </form>
+</body>
+
+</html>

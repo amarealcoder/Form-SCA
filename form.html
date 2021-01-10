@@ -11,38 +11,44 @@
 <body>
     <img src="form-image2.jpg" alt="a highrise bulding">
 
-    <form>
+    <form id="form">
         <h2>Let's work together</h2>
         <p id="desc">We'd love to hear from you! Send us a message using the form or e-mail us. Your feedback will help us serve you better because your satisfaction is our joy.</p>
         <ul>
             <div class="aligned">
-                <li>
+                <li class="item">
                     <label for="name" class="aligned-label">First name</label>
                     <input type="text" class="aligned-input" id="fname" name="user_firstname">
+                    <small class="error-msg">Error message</small>
                 </li>
-                <li>
+                <li class="item">
                     <label for="name" class="aligned-label">Last name</label>
                     <input type="text" class="aligned-input" id="lname" name="user_lastname">
+                    <small class="error-msg">Error message</small>
                 </li>
             </div>
-            <li>
+            <li class="item">
                 <label for="mail">E-mail</label>
                 <input type="email" id="mail" name="user_email">
+                <small class="error-msg">Error message</small>
             </li>
-            <li>
+            <li class="item">
                 <label for="workplace">Company</label>
                 <input type="text" id="workplace" name="user_workplace">
+                <small class="error-msg">Error message</small>
             </li>
-            <li>
+            <li class="item">
                 <label for="phone">Phone <small>Optional</small></label>
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                <small class="error-msg">Error message</small>
             </li>
-            <li>
+            <li class="item">
                 <label for="msg" id="ask">How can we help you? <small>Max. 500 characters</small></label>
                 <textarea id="msg" name="user_message" maxlength="500"></textarea>
+                <small class="error-msg">Error message</small>
             </li>
         </ul>
-        <div>
+        <div id="budget" class="item">
             <p>Expected Budget</p>
             <input type="radio" name="budget" value="less_than_$25k" id="choice1"><label for="choice1">Less than
                 $25k</label>
@@ -52,15 +58,20 @@
             <input type="radio" name="budget" value="$50k-$100k" id="choice3"><label for="choice3">$50k-$100k</label>
             <br>
             <input type="radio" name="budget" value="$100k+" id="choice4"><label for="choice3">$100k+</label>
+            <small class="error-msg">Error message</small>
         </div>
-        <div id="fdback">
+        <div id="fdback" class="item">
             <label for="feedback">How did you hear about us?</label>
             <input type="text" id="feedback" name="user_feedback">
+            <small class="error-msg">Error message</small>
         </div>
-        <div id="button">
+        <!-- <div id="button">
             <input type="submit" value="submit">
-        </div>
+        </div>  -->
+        <button>Submit</button>
     </form>
+
+    <script src="form.js"></script>
 </body>
 
 </html>

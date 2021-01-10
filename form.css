@@ -22,7 +22,10 @@ ul {
     padding: 5px 20px;
 }
 li{
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    /* position: relative; */
 }
 input[type="text"], input[type="tel"], input[type="email"], textarea {
 	border-radius: 4px;
@@ -36,6 +39,19 @@ input[type="text"], input[type="tel"], input[type="email"], textarea {
 .aligned{
     padding: 0;
 }
+.success input{
+    border-color: #2ecc71; 
+}
+.error input{
+    border-color: #e74e3c; 
+}
+.error-msg{
+    visibility: hidden;
+    /* font-size: 0.85rem; */
+}
+.error .error-msg{
+    visibility: visible;
+}
 #ask{
     font-size: 14px;
 }
@@ -46,6 +62,9 @@ small{
 }
 div{
     padding: 5px 20px;
+    margin-bottom: 20px;
+    /* padding-bottom: 20px; */
+    /* position: relative; */
 }
 input[type="radio"] {
     padding-top: 10px;
@@ -55,17 +74,21 @@ input[type="radio"] {
 }
 #fdback{
     margin-top: 25px;
-}
-input[type="submit"] {
+    /* padding: 8px; */
+} 
+button{
     background-color: #780e00;
     color: #f7f2ee;
     padding: 12px 20px;
+    margin: 30px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     float: right;
+    font-size: 20px;
 }
-input[type="submit"]:hover{
+
+button:hover{
   background-color:#3a1f0e;
 }
 /* Media Qeries for larger devices */
@@ -78,7 +101,7 @@ input[type="submit"]:hover{
     img{
         float: right;
         max-width: 50%;
-        min-height: 290%;
+        min-height: 320%;
     }
     h2{
         font-size: 35px;
@@ -195,8 +218,9 @@ input[type="submit"]:hover{
     img{
         min-height: 250%;
     }
-    input[type="submit"] {
+    button{
         padding: 25px 40px;
+        margin: 40px;
         font-size: 1.5rem;
         border-radius: 1rem;
         

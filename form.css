@@ -22,10 +22,8 @@ ul {
     padding: 5px 20px;
 }
 li{
-    /* margin-top: 20px; */
     margin-bottom: 10px;
     padding-bottom: 20px;
-    /* position: relative; */
 }
 input[type="text"], input[type="tel"], input[type="email"], textarea {
 	border-radius: 4px;
@@ -43,11 +41,12 @@ input[type="text"], input[type="tel"], input[type="email"], textarea {
     border-color: #2ecc71; 
 }
 .error input{
-    border-color: #e74e3c; 
+    border-color: #fa0202; 
 }
 .error-msg{
     visibility: hidden;
-    /* font-size: 0.85rem; */
+    font-size: 0.85rem;
+    color: #fa0202; 
 }
 .error .error-msg{
     visibility: visible;

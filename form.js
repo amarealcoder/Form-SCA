@@ -1,12 +1,8 @@
 const form = document.getElementById('form');
 const fname = document.getElementById('fname');
 const lname = document.getElementById('lname');
-const mail = document.getElementById('mail');
+const email = document.getElementById('email');
 const workplace = document.getElementById('workplace');
-const phone = document.getElementById('phone');
-const msg = document.getElementById('msg');
-const budget = document.getElementById('budget');
-const fdback = document.getElementById('fback')
 
 form.addEventListener('submit', (e) => {
     e.preventDefault ();
@@ -18,12 +14,8 @@ function checkInputs (){
     //get the values from the inputs
     const fnameValue = fname.value.trim();
     const lnameValue = lname.value.trim();
-    const mailValue = mail.value.trim();
+    const emailValue = email.value.trim();
     const workplaceValue = workplace.value.trim();
-    const phoneValue = phone.value.trim();
-    const msgValue = msg.value.trim();
-    const budgetValue = budget.value.trim();
-    const fdbackValue = fdback.value.trim();
 
     if(fnameValue === ''){
         //show error
@@ -33,7 +25,31 @@ function checkInputs (){
        //add success class 
        setSuccessFor(fname);
     }
+
+    if(lnameValue === ''){
+
+        setErrorFor(lname, 'Please, fill in your last name');
+    }else{
+        setSuccessFor(lname);
+    }
+
+    if(emailValue === ''){
+        setErrorFor(email, 'User email cannot be blank');
+
+    }else if(!isEmail(emailValue)) {
+        setErrorFor(email, 'Email is not valid, please check again');
+        
+    }else{
+        setSuccessFor(email);
+    }
+
+    if(workplaceValue === ''){
+        setErrorFor(workplace, 'Please, fill in your workplace');
+    }else{
+        setSuccessFor(workplace);
+    }
 }
+
 function setErrorFor(input, message){
     const item = input.parentElement; //to get the true class .item
     const errorMsg = item.querySelector('.error-msg')
@@ -48,4 +64,8 @@ function setErrorFor(input, message){
 function setSuccessFor(input){
     const item = input.parentElement;
     item.className = 'item success';
+}
+function isEmail(email) {
+    // /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)
+    ^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$
 }

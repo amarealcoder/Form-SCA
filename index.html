@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <img src="form-image2.jpg" alt="a highrise bulding">
+
+    <form action="/amarealcoder-confirmation-page.netlify.app" method="post" data-netlify="true" name="form" id="form">
+        <h2>Let's work together</h2>
+        <p id="desc">We'd love to hear from you! Send us a message using the form or e-mail us. Your feedback will help us serve you better because your satisfaction is our joy.</p>
+        <ul>
+            <div class="aligned">
+                <li class="item">
+                    <label for="name" class="aligned-label">First name</label>
+                    <input type="text" class="aligned-input" id="fname" name="user_firstname">
+                    <small class="error-msg">Error message</small>
+                </li>
+                <li class="item">
+                    <label for="name" class="aligned-label">Last name</label>
+                    <input type="text" class="aligned-input" id="lname" name="user_lastname">
+                    <small class="error-msg">Error message</small>
+                </li>
+            </div>
+            <li class="item">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="user_email">
+                <small class="error-msg">Error message</small>
+            </li>
+            <li class="item">
+                <label for="workplace">Company</label>
+                <input type="text" id="workplace" name="user_workplace">
+                <small class="error-msg">Error message</small>
+            </li>
+            <li class="item">
+                <label for="phone">Phone <small>Optional</small></label>
+                <input type="tel" id="phone" name="phone">  <!--I did not add a pattern to the phone number input because phone numbers are a wide range across the world and one pattern may not suit them all -->
+            </li>
+            <li class="item">
+                <label for="msg" id="ask">How can we help you? <small>Max. 500 characters</small></label>
+                <textarea id="msg" name="user_message" maxlength="500"></textarea>
+            </li>
+        </ul>
+        <div id="budget" class="item">
+            <p>Expected Budget</p>
+            <input type="radio" name="budget1" value="option1" id="choice1"><label for="choice1">Less than
+                $25k</label>
+            <br>
+            <input type="radio" name="budget2" value="option2" id="choice2"><label for="choice2">$25k-$50k</label>
+            <br>
+            <input type="radio" name="budget3" value="option3" id="choice3"><label for="choice3">$50k-$100k</label>
+            <br>
+            <input type="radio" name="budget4" value="option4" id="choice4"><label for="choice3">$100k+</label>
+            <small class="error-msg">Error message</small>
+        </div>
+        <div id="fdback" class="item">
+            <label for="feedback">How did you hear about us?</label>
+            <input type="text" id="feedback" name="user_feedback">
+            <small class="error-msg">Error message</small>
+        </div> 
+            <button>Submit</button>
+    </form>
+
+    <script src="form.js"></script>
+</body>
+
+</html>

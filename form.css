@@ -62,8 +62,6 @@ small{
 div{
     padding: 5px 20px;
     margin-bottom: 20px;
-    /* padding-bottom: 20px; */
-    /* position: relative; */
 }
 input[type="radio"] {
     padding-top: 10px;
@@ -73,7 +71,6 @@ input[type="radio"] {
 }
 #fdback{
     margin-top: 25px;
-    /* padding: 8px; */
 } 
 button{
     background-color: #780e00;

@@ -34,25 +34,32 @@ input[type="text"], input[type="tel"], input[type="email"], textarea {
     background-color: #f7f2ee;
     font-size: 18px;
 }
+.item.success input{
+    border: 2px solid #07b324;
+}
+.item.error input{
+    border: 2px solid #f80303;
+}
+.item .error-msg{
+    visibility: hidden;
+}
+.item.error .error-msg{
+    color: #f80303;
+    visibility: visible;
+} 
+/* input:invalid {
+    border: 2px solid #f80303;
+  }
+  
+  input:invalid:required {
+   border: #fc5e03;
+  }
+  
+  input:valid {
+    border: 2px solid #07b324
+  } */
 .aligned{
     padding: 0;
-}
-.success input{
-    border-color: #2ecc71; 
-}
-.error input{
-    border-color: #fa0202; 
-}
-.error-msg{
-    visibility: hidden;
-    font-size: 0.85rem;
-    color: #fa0202; 
-}
-.error .error-msg{
-    visibility: visible;
-}
-#ask{
-    font-size: 14px;
 }
 small{
     float: right;
@@ -114,7 +121,7 @@ button:hover{
     padding: 10px;
     margin-top: 25px;
     }   
-    #ask{
+    label, #ask, .choose{
         font-size: 20px;
     }
     small{
@@ -148,7 +155,7 @@ button:hover{
         padding: 10px;
         margin-top: 25px;
     }
-    #ask{
+    label, #ask, .choose{
         font-size: 20px;
     }
     small{
@@ -195,7 +202,7 @@ button:hover{
     input[type="text"], input[type="tel"], input[type="email"], textarea {
         padding: 25px;
     }
-    #ask{
+    label, #ask, .choose{
         font-size: 35px;
     }
     small{

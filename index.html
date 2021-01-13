@@ -11,62 +11,79 @@
 <body>
     <img src="form-image2.jpg" alt="a highrise bulding">
 
-    <form action="/amarealcoder-confirmation-page.netlify.app" data-netlify="true" name="form" method="post" id="form">
+    <form action="/confirm.html" data-netlify="true" name="form1" method="post" id="form">
         <h2>Let's work together</h2>
         <p id="desc">We'd love to hear from you! Send us a message using the form or e-mail us. Your feedback will help us serve you better because your satisfaction is our joy.</p>
         <ul>
             <div class="aligned">
                 <li class="item">
-                    <label for="name" class="aligned-label">First name</label>
+                    <label for="name" class="aligned-label">First name *</label>
                     <input type="text" class="aligned-input" id="fname" name="user_firstname">
-                    <small class="error-msg">Error message</small>
+                    <small class="error-msg">error message</small>
                 </li>
                 <li class="item">
-                    <label for="name" class="aligned-label">Last name</label>
+                    <label for="name" class="aligned-label">Last name *</label>
                     <input type="text" class="aligned-input" id="lname" name="user_lastname">
-                    <small class="error-msg">Error message</small>
+                    <small class="error-msg">error message</small>
                 </li>
             </div>
             <li class="item">
-                <label for="email">E-mail</label>
+                <label for="email">E-mail *</label>
                 <input type="email" id="email" name="user_email">
-                <small class="error-msg">Error message</small>
+                <small class="error-msg">error message</small>
             </li>
             <li class="item">
-                <label for="workplace">Company</label>
+                <label for="workplace" required>Company *</label>
                 <input type="text" id="workplace" name="user_workplace">
-                <small class="error-msg">Error message</small>
+                <small class="error-msg">error message</small>
             </li>
-            <li class="item">
-                <label for="phone">Phone <small>Optional</small></label>
-                <input type="tel" id="phone" name="phone">  <!--I did not add a pattern to the phone number input because phone numbers are a wide range across the world and one pattern may not suit them all -->
+            <li>
+                <label for="phone">Phone (000-0000-0000)<small>Optional</small></label>
+                <input type="tel" id="phone" name="phone" required  pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">  <!--I did not add a pattern to the phone number input because phone numbers are a wide range across the world and one pattern may not suit them all -->
             </li>
-            <li class="item">
+            <li>
                 <label for="msg" id="ask">How can we help you? <small>Max. 500 characters</small></label>
-                <textarea id="msg" name="user_message" maxlength="500"></textarea>
+                <textarea id="msg" name="user_message" maxlength="500" rows="4" cols="50"></textarea>
             </li>
         </ul>
-        <div id="budget" class="item">
-            <p>Expected Budget</p>
-            <input type="radio" name="budget1" value="option1" id="choice1"><label for="choice1">Less than
+        <div id="budget">
+            <p class="choose">Expected Budget *</p>
+            <input type="radio" required name="budget" value="option1" id="choice1"><label for="choice1">Less than
                 $25k</label>
             <br>
-            <input type="radio" name="budget2" value="option2" id="choice2"><label for="choice2">$25k-$50k</label>
+            <input type="radio" required name="budget" value="option2" id="choice2"><label for="choice2">$25k-$50k</label>
             <br>
-            <input type="radio" name="budget3" value="option3" id="choice3"><label for="choice3">$50k-$100k</label>
+            <input type="radio" required name="budget" value="option3" id="choice3"><label for="choice3">$50k-$100k</label>
             <br>
-            <input type="radio" name="budget4" value="option4" id="choice4"><label for="choice3">$100k+</label>
-            <small class="error-msg">Error message</small>
+            <input type="radio" required name="budget" value="option4" id="choice4"><label for="choice3">$100k+</label>
+
         </div>
         <div id="fdback" class="item">
-            <label for="feedback">How did you hear about us?</label>
+            <label for="feedback">How did you hear about us? *</label>
             <input type="text" id="feedback" name="user_feedback">
-            <small class="error-msg">Error message</small>
+            <small class="error-msg">error message</small>
         </div> 
             <button>Submit</button>
     </form>
-
-    <script src="form.js"></script>
+    <script src="form.js">
+        var form = document.querySelector('form')
+        form.addEventListener('submit', function (event) {
+        event.preventDefault()
+        var formData = new FormData(form)
+        if (checkInputs() === true) {
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams(formData).toString()
+            }).then(() => location.href = /amarealcoder-confirmation-page.netlify.app/)
+        } else {
+            // show errors
+            setErrorFor(input);
+        }
+    })
+        </script>
 </body>
 
 </html>

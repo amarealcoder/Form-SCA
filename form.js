@@ -3,6 +3,7 @@ const fname = document.getElementById('fname');
 const lname = document.getElementById('lname');
 const email = document.getElementById('email');
 const workplace = document.getElementById('workplace');
+const feedback = document.getElementById('feedback');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault ();
@@ -16,6 +17,7 @@ function checkInputs (){
     const lnameValue = lname.value.trim();
     const emailValue = email.value.trim();
     const workplaceValue = workplace.value.trim();
+    const feedbackValue = feedback.value.trim()
 
     if(fnameValue === ''){
         //show error
@@ -48,6 +50,11 @@ function checkInputs (){
     }else{
         setSuccessFor(workplace);
     }
+    if(feedbackValue === ''){
+        setErrorFor(feedback, 'Please, give us a feedback')
+    }else{
+        setSuccessFor(feedback);
+    }
 }
 
 function setErrorFor(input, message){
@@ -65,10 +72,6 @@ function setSuccessFor(input){
     const item = input.parentElement;
     item.className = 'item success';
 }
-// function isEmail(email) {
-    // /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)
-    // ^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$
-// }
 function isEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());

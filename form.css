@@ -46,6 +46,7 @@ input[type="text"], input[type="tel"], input[type="email"], textarea {
 .item.error .error-msg{
     color: #f80303;
     visibility: visible;
+    font-size: 16px;
 } 
 .aligned{
     padding: 0;

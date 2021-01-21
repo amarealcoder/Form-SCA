@@ -21,7 +21,7 @@ function checkInputs (){
     if(fnameValue === ''){
         //show error
         //add error class
-       setErrorFor(fname, 'Oops! User first name cannot be blank');     
+       setErrorFor(fname, 'User first name cannot be blank');     
     }else{
        //add success class 
        setSuccessFor(fname);

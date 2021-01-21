@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <img src="form-image2.jpg" alt="a highrise bulding">
+    <img src="form-image2.jpg" alt="a highrise building">
 
-    <form action="/confirm.html" data-netlify="true" name="form1" method="post" id="form">
+    <form action="confirm.html" onsubmit="return checkInputs()" data-netlify="true"  method="post" name="form1" id="form">
         <h2>Let's work together</h2>
         <p id="desc">We'd love to hear from you! Send us a message using the form or e-mail us. Your feedback will help us serve you better because your satisfaction is our joy.</p>
         <ul>
@@ -39,7 +39,7 @@
             </li>
             <li>
                 <label for="phone">Phone (000-0000-0000)<small>Optional</small></label>
-                <input type="tel" id="phone" name="phone" required  pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">  <!--I did not add a pattern to the phone number input because phone numbers are a wide range across the world and one pattern may not suit them all -->
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
             </li>
             <li>
                 <label for="msg" id="ask">How can we help you? <small>Max. 500 characters</small></label>
@@ -63,27 +63,9 @@
             <input type="text" id="feedback" name="user_feedback">
             <small class="error-msg">error message</small>
         </div> 
-            <button>Submit</button>
+        <input type="submit" value="Submit">
     </form>
-    <script src="form.js">
-        var form = document.querySelector('form')
-        form.addEventListener('submit', function (event) {
-        event.preventDefault()
-        var formData = new FormData(form)
-        if (checkInputs() === true) {
-            fetch('/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: new URLSearchParams(formData).toString()
-            }).then(() => location.href = /amarealcoder-confirmation-page.netlify.app/)
-        } else {
-            // show errors
-            setErrorFor(input);
-        }
-    })
-        </script>
+    <script src= "form.js"></script>
 </body>
 
 </html>

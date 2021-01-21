@@ -47,17 +47,6 @@ input[type="text"], input[type="tel"], input[type="email"], textarea {
     color: #f80303;
     visibility: visible;
 } 
-/* input:invalid {
-    border: 2px solid #f80303;
-  }
-  
-  input:invalid:required {
-   border: #fc5e03;
-  }
-  
-  input:valid {
-    border: 2px solid #07b324
-  } */
 .aligned{
     padding: 0;
 }
@@ -79,7 +68,7 @@ input[type="radio"] {
 #fdback{
     margin-top: 25px;
 } 
-button{
+input[type="submit"] {
     background-color: #780e00;
     color: #f7f2ee;
     padding: 12px 20px;
@@ -91,7 +80,7 @@ button{
     font-size: 20px;
 }
 
-button:hover{
+input[type="submit"]:hover{
   background-color:#3a1f0e;
 }
 /* Media Qeries for larger devices */
@@ -221,7 +210,7 @@ button:hover{
     img{
         min-height: 250%;
     }
-    button{
+    input[type="submit"] {
         padding: 25px 40px;
         margin: 40px;
         font-size: 1.5rem;
